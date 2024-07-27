@@ -7,14 +7,33 @@ a.navbar-brand {
   word-break: break-all;
 }
 
-nav{
-    background-color: grey;
+.navbar{
+    display: flex;
+    flex-direction:row;
+    background-color: ghostwhite;
     width: 100%;
     height: 60px;
 }
 
-a {
-  color: #0077cc;
+.navbar-inside-inner{
+    display:flex;
+    flex-direction:row;
+}
+
+
+
+nav{
+    flex-direction:row;
+    display:flex;
+}
+
+nav div{
+    flex-direction: row;
+    display: flex;
+}
+
+nav div div a{
+    color:red;
 }
 
 .btn-primary {

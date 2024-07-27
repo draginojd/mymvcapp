@@ -1,3 +1,7 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+ // Adjust the namespace to match your project
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
