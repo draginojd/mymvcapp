@@ -1,0 +1,50 @@
+﻿body {
+  
+   
+}
+
+.row{
+    height:75vh;
+}
+
+header {
+    background-color: color-mix(in srgb, #003d66, #662900);
+    margin-bottom: 4vh;
+}
+.navbar .navbar-inner-container{
+  
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-link{
+    color:white;
+}
+
+.form-group, .form-group-gender{
+   
+   
+}
+
+.form-group-gender {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.form-group-button{
+    width: 100%;
+    margin-bottom: 15%;
+}
+
+    .form-group-button button {
+        width: 40%;
+        margin-left: 31%;
+        font-size: 15px;
+        background-color: color-mix(in srgb, #1977d2 65%, #1977d2);
+        transition: ease-in 0.2s;
+    }
+
+        .form-group-button button:hover {
+            box-shadow: inset 25vw 0 20px 0 color-mix(in srgb, #0af550 65%, #1977d2);
+            background-color: grey;
+        }

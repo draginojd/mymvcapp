@@ -1,34 +1,44 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using mymvcapp.Data;
 using mymvcapp.Models;
-using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 
 namespace mymvcapp.Controllers
 {
     public class AccountController : Controller
     {
-        public IActionResult SignUp()
-        {
-            var account = new AccountModel() 
-            {Id=1,Email="example@gmail.com", FirstName="First name", LastName="Last name" , Password="Password123"}; 
+        private readonly MongoDbContext _context;
 
-            return View(account);
+        public AccountController(MongoDbContext context)
+        {
+            _context = context;
         }
 
+        // GET: /Account/SignUp
+        [HttpGet]
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+
+        // POST: /Account/SignUp
         [HttpPost]
-        public IActionResult SignUp(AccountModel model)
+        public async Task<IActionResult> SignUp(AccountModel model)
         {
             if (ModelState.IsValid)
             {
-                // Process the form data here (e.g., save to the database)
+                // Insert the document into MongoDB
+                await _context.Accounts.InsertOneAsync(model);
 
-                // Redirect to a confirmation page or back to the same page
-                return RedirectToAction("Index", "Home");
+                // Redirect to a success page or another page after successful registration
+                return RedirectToAction("Index", "Home"); // Adjust redirection as needed
             }
 
-            // If validation fails, return the same view with error messages
+            // If model state is invalid, return the same view with validation errors
             return View(model);
         }
+
+
+
     }
 }
-

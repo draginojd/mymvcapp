@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h3>@ViewBag.Message</h3>
+
+<p> number of customers: @ViewBag.CustomerCount</p>
+
+
+<ul>
+    @foreach(var item in ViewBag.CustomerList) //for each loop listing  all customers with id , name & amount
+    {
+        <li> 
+            Customer ID: @item.Id | 
+            Amount: @item.Amount kr | 
+            Name: @item.Name | 
+            @item.City | 
+            @item.Country | 
+            @item.Phone </li><hr/>
+    };
+</ul>
+
+<style> 
+    li {
+        list-style-type: none;
+    }
+</style>

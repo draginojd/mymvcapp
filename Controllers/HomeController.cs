@@ -28,5 +28,15 @@ namespace mymvcapp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        public ViewResult Message1()
+        {
+            return View();
+        }
+        public ViewResult Message()
+        {
+            return View();
+        }
+
+
     }
 }
