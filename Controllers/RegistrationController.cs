@@ -14,11 +14,11 @@ namespace mymvcapp.Controllers
             return View();
         }
 
-        private readonly ApplicationUser _auc;
+        private readonly ApplicationUser _db;
 
-        public RegistrationController(ApplicationUser auc)
+        public RegistrationController(ApplicationUser db)
         {
-            _auc = auc;
+            _db = db;
         }
         public IActionResult Create()
         {
@@ -27,67 +27,19 @@ namespace mymvcapp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(User uc)
+        public IActionResult Create(User user)
         {
-            _auc.Add(uc);
-            _auc.SaveChanges();
-            ViewBag.message = "The user: " + uc.Username + ", is successfully registered";
-            return View();
-        }
-
-
-
-
-
-
-        // GET: Registration/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-
-
-        // GET: Registration/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Registration/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
+                _db.Add(user);
+                _db.SaveChanges();
+                ViewBag.message = $"The user: {user.Username}, is successfully registered";
                 return View();
             }
+            return View(user);
         }
 
-        // GET: Registration/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
 
-        // POST: Registration/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+
     }
 }

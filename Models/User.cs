@@ -1,5 +1,10 @@
 ﻿using Microsoft.Identity.Client;
 using System.ComponentModel.DataAnnotations;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace mymvcapp.Models
 {
@@ -8,30 +13,27 @@ namespace mymvcapp.Models
         [Key]
         public int UserId { get; set; }
 
-        [Required(ErrorMessage = "Please Enter Your Username..")]
-        [Display(Name = "UserName")]
-        public string? Username { get; set; }
+        [Required(ErrorMessage = "Please Enter Username..")]
+        [Display(Name = "Username")]
+        public string Username { get; set; }
 
-      
-
-        [Required(ErrorMessage = "Please Enter Your Email")]
-        [Display( Name = "Email")]
-        public string ? Email { get; set; }
-
-
-
-        [Required(ErrorMessage = "Please Enter Your Password..")]
-        [Display(Name = "Password")]
+        [Required(ErrorMessage = "Please Enter Password...")]
         [DataType(DataType.Password)]
-        public string? Password { get; set; }
+        [Display(Name = "Password")]
+        public string Password { get; set; }
 
-        [Required(ErrorMessage = "Please Enter Your Password Again To Confirm..")]
-        [Display(Name = "Confirm-Password")]
-        [DataType (DataType.Password)]
-        public string? ConfirmPassword { get; set; }
+        [Required(ErrorMessage = "Please Enter the Confirm Password...")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm Password")]
+        [Compare("Password")]
+        public string ConfirmPassword { get; set; }
 
-        [Required(ErrorMessage = "Select Gender..")]
+        [Required(ErrorMessage = "Please Enter Email...")]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Select the Gender...")]
         [Display(Name = "Gender")]
-        public string? Gender { get; set; }
+        public string Gender { get; set; }
     }
 }
