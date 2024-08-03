@@ -14,11 +14,12 @@ header {
 .navbar .navbar-inner-container{
   
     display: flex;
-    flex-direction: row;
+    flex-direction: row;  
 }
 
-.nav-link{
-    color:white;
+.nav-link {
+    color: white;
+    border-right: solid 1px grey;
 }
 
 .form-group, .form-group-gender{
@@ -45,6 +46,6 @@ header {
     }
 
         .form-group-button button:hover {
-            box-shadow: inset 25vw 0 20px 0 color-mix(in srgb, #0af550 65%, #1977d2);
+            box-shadow: inset 45vw 0 20px 0 color-mix(in srgb, #0af550 65%, #1977d2);
             background-color: grey;
         }
