@@ -22,7 +22,7 @@ builder.Services.AddControllersWithViews();
 
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<ApplicationUser>(options =>
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Myconnection")));
 
 

@@ -1,17 +1,23 @@
-﻿namespace mymvcapp.Models
-{
-    public class Customer
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string Region { get; set; }
-        public string PostalCode { get; set; }
-        public string Country { get; set; }
-        public string Phone { get; set; }
-        public double Amount { get; set; }
+﻿using System;
+using System.Collections.Generic;
 
- 
-    }
+namespace mymvcapp.Models;
+
+public partial class Customer
+{
+    public int CustomerId { get; set; }
+
+    public decimal Amount { get; set; }
+
+    public string Username { get; set; } = null!;
+
+    public string FirstName { get; set; } = null!;
+
+    public string LastName { get; set; } = null!;
+
+    public string Email { get; set; } = null!;
+
+    public string Subscription { get; set; } = null!;
+
+    public int? Phone { get; set; }
 }

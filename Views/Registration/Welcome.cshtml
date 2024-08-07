@@ -8,9 +8,15 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Message</title>
+    <title>Welcome</title>
 </head>
 <body>
-    <h1>MESSAGE : HELLO</h1>
+    @{
+        ViewData["Title"] = "Welcome";
+    }
+
+    <h1>Welcome!</h1>
+    <p>You have successfully logged in.</p>
+
 </body>
 </html>
